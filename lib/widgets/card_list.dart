@@ -3,7 +3,7 @@ import '../data/FoodItem.dart';
 import './card.dart';
 
 class CardList extends StatelessWidget {
-  const CardList({Key? key}) : super(key: key);
+  CardList({Key? key}) : super(key: key);
 
   final foodList = List<FoodItem>.of([
     FoodItem(title: 'Dia 1', image: 'assets/food/watermelon.png'),
@@ -29,7 +29,7 @@ class CardList extends StatelessWidget {
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
             ),
-            itemCount: FoodList.length,
+            itemCount: foodList.length,
             itemBuilder: (BuildContext ctx, index) {
               return CardFood(
                 title: foodList[index].title,
