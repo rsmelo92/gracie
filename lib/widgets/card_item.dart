@@ -39,7 +39,8 @@ class _CardItemState extends State<CardItem> {
                       leading:
                           Icon(widget.icon, size: 56, color: Colors.deepOrange),
                       title: Text(widget.items[index]),
-                      trailing: Icon(Icons.info_outlined),
+                      trailing: Icon(
+                          Icons.info_outlined), // TODO: add onClick fetch info
                     )),
               );
             })
