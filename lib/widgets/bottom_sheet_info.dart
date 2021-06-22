@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './card_header.dart';
+import './card_item.dart';
 
 class BottomSheetInfo extends StatefulWidget {
   BottomSheetInfo({Key? key, required this.title, required this.image})
@@ -12,25 +14,38 @@ class BottomSheetInfo extends StatefulWidget {
 }
 
 class _BottomSheetInfoState extends State<BottomSheetInfo> {
+  final breakfast = List<String>.of(
+      ['Banana batida com suco de melancia', 'Queijo Minas', 'Polpa de coco']);
+  final lunch =
+      List<String>.of(['Salada', 'Livre', 'Agua de coco ou suco de cenoura']);
+  final dinner = List<String>.of(
+      ['Suco de laranja lima', 'Caqui', 'Queijo Minas', 'Tapioca']);
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.only(left: 16, right: 16),
-        child: Column(children: <Widget>[
-          Icon(
-            Icons.remove,
-            color: Colors.grey[400],
-            size: 50.0,
-          ),
-          Text(
-            widget.title,
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 35),
-          ),
-          Container(
-            width: 180,
-            margin: EdgeInsets.only(top: 32, bottom: 16),
-            child: Image.asset(widget.image),
-          ),
-        ]));
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          CardHeader(title: widget.title, image: widget.image),
+          Expanded(
+              child: ListView(
+            padding: EdgeInsets.only(top: 16, bottom: 64, right: 20, left: 12),
+            shrinkWrap: true,
+            children: <Widget>[
+              CardItem(
+                  icon: Icons.local_cafe_outlined,
+                  title: 'Breakfast',
+                  items: breakfast),
+              CardItem(
+                  icon: Icons.restaurant_outlined,
+                  title: 'Lunch',
+                  items: lunch),
+              CardItem(
+                  icon: Icons.breakfast_dining_outlined,
+                  title: 'Dinner',
+                  items: dinner),
+            ],
+          ))
+        ]);
   }
 }
