@@ -3,24 +3,26 @@ import './card_header.dart';
 import './card_item.dart';
 
 class BottomSheetInfo extends StatefulWidget {
-  BottomSheetInfo({Key? key, required this.title, required this.image})
+  BottomSheetInfo(
+      {Key? key,
+      required this.title,
+      required this.image,
+      required this.breakfast,
+      required this.lunch,
+      required this.dinner})
       : super(key: key);
 
   final String title;
   final String image;
+  final List<String> breakfast;
+  final List<String> lunch;
+  final List<String> dinner;
 
   @override
   _BottomSheetInfoState createState() => _BottomSheetInfoState();
 }
 
 class _BottomSheetInfoState extends State<BottomSheetInfo> {
-  final breakfast = List<String>.of(
-      ['Banana batida com suco de melancia', 'Queijo Minas', 'Polpa de coco']);
-  final lunch =
-      List<String>.of(['Salada', 'Livre', 'Agua de coco ou suco de cenoura']);
-  final dinner = List<String>.of(
-      ['Suco de laranja lima', 'Caqui', 'Queijo Minas', 'Tapioca']);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,16 +36,16 @@ class _BottomSheetInfoState extends State<BottomSheetInfo> {
             children: <Widget>[
               CardItem(
                   icon: Icons.local_cafe_outlined,
-                  title: 'Breakfast',
-                  items: breakfast),
+                  title: 'Café da Manhã',
+                  items: widget.breakfast),
               CardItem(
                   icon: Icons.restaurant_outlined,
-                  title: 'Lunch',
-                  items: lunch),
+                  title: 'Almoço',
+                  items: widget.lunch),
               CardItem(
                   icon: Icons.breakfast_dining_outlined,
-                  title: 'Dinner',
-                  items: dinner),
+                  title: 'Jantar',
+                  items: widget.dinner),
             ],
           ))
         ]);

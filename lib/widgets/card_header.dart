@@ -23,11 +23,11 @@ class _CardHeaderState extends State<CardHeader> {
       ),
       Text(
         widget.title,
-        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 35),
+        style: TextStyle(fontWeight: FontWeight.w500, fontSize: 30),
       ),
       Container(
-        width: 180,
-        margin: EdgeInsets.only(top: 32, bottom: 16),
+        width: 150,
+        margin: EdgeInsets.only(top: 20, bottom: 16),
         child: Image.asset(widget.image),
       ),
     ]));

@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 import 'bottom_sheet_info.dart';
 
 class CardFood extends StatefulWidget {
-  CardFood({Key? key, required this.title, required this.image})
+  CardFood(
+      {Key? key,
+      required this.title,
+      required this.image,
+      required this.breakfast,
+      required this.lunch,
+      required this.dinner})
       : super(key: key);
 
   final String title;
   final String image;
+  final List<String> breakfast;
+  final List<String> lunch;
+  final List<String> dinner;
 
   @override
   _CardFoodState createState() => _CardFoodState();
@@ -43,7 +52,14 @@ class _CardFoodState extends State<CardFood> {
           borderRadius: BorderRadius.circular(16.0),
         ),
         builder: (context) {
-          return BottomSheetInfo(title: widget.title, image: widget.image);
+          return Container(
+              height: MediaQuery.of(context).size.height * 0.90,
+              child: BottomSheetInfo(
+                  title: widget.title,
+                  image: widget.image,
+                  breakfast: widget.breakfast,
+                  lunch: widget.lunch,
+                  dinner: widget.dinner));
         });
   }
 }

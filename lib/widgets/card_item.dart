@@ -20,7 +20,7 @@ class _CardItemState extends State<CardItem> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(bottom: 12, right: 24, left: 24),
+          padding: EdgeInsets.only(top: 20, bottom: 12, right: 24, left: 24),
           child: Text(
             widget.title,
             style: TextStyle(fontSize: 24),
