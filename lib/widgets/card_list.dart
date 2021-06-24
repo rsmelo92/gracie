@@ -5,6 +5,7 @@ import './card.dart';
 class CardList extends StatelessWidget {
   CardList({Key? key}) : super(key: key);
 
+  // TODO: move to model
   final foodList = List<FoodItem>.of([
     FoodItem(title: 'Dia 1', image: 'assets/food/watermelon.png', breakfast: [
       'Banana batida com suco de melancia',

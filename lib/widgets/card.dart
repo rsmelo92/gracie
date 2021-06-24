@@ -54,6 +54,7 @@ class _CardFoodState extends State<CardFood> {
         builder: (context) {
           return Container(
               height: MediaQuery.of(context).size.height * 0.90,
+              // TODO: Avoid passing from widget to widget
               child: BottomSheetInfo(
                   title: widget.title,
                   image: widget.image,
