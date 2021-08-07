@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../data/FoodItem.dart';
 import './card.dart';
+import '../data/FoodItem.dart';
 
 class CardList extends StatelessWidget {
   CardList({Key? key}) : super(key: key);
